@@ -16,7 +16,7 @@ SVIFT.vis.example.sincos = (function (data, container) {
     var width = module.container.node().offsetWidth,
       height = module.container.node().offsetHeight;
 
-    module.timeline.circle.obj.interpolate = d3.interpolate(20, height-20);
+    module.timeline.circle.obj.interpolate = d3.interpolate(0, height-40);
 
     if(!module.playState){
       module.draw(module.playHead);
@@ -24,7 +24,7 @@ SVIFT.vis.example.sincos = (function (data, container) {
   };
 
   module.drawCircle = function(t){
-    module.g.select('circle').attr('y', module.timeline.circle.obj.interpolate(
+    module.g.select('circle').attr('cy', module.timeline.circle.obj.interpolate(
       (Math.sin( (t * Math.PI*20) - (Math.PI/2) ) + 1)/2
     ));
   };
